@@ -1,0 +1,42 @@
+language: node_js
+
+cache:
+  directories:
+    - ~/.npm
+
+node_js:
+  - '8'
+  - '10'
+  - '12'
+
+services:
+  - serviceName
+
+git:
+  depth: 3
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - NODE_ENV=development
+    - PORT=3000
+    - JWT_SECRET=bA2xcjpf8y5aSUFsNB2qN5yymUBSs6es3qHoFpGkec75RCeBb8cpKauGefw5qy4
+    - JWT_EXPIRATION_MINUTES= 1440
+    - MYSQL_DB_USERNAME= Your db user name
+    - MYSQL_DB_PASSWORD= Your db password
+    - MYSQL_DB_NAME= db name
+    - MYSQL_DB_HOST= db host
+    - DASHBOARD_URL=https://your_website_url.com
+    - API_URL=https://localhost:3000
+    - YOUR_COMPANY_AWS_REGION=
+    - YOUR_COMPANY_AWS_SES_REGION=
+    - YOUR_COMPANY_AWS_ACCESS_KEY_ID=
+    - YOUR_COMPANY_AWS_SECRET_ACCESS_KEY=
+    - YOUR_COMPANY_LOGO= logo url
+    - UPPORT_EMAIL=support@gmail.com
+
+script: yarn validate
+after_success: yarn coverage
