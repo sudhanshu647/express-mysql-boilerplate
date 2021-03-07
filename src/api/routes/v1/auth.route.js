@@ -13,7 +13,6 @@ const {
 
 const router = express.Router();
 
-
 /**
  * @swagger
  * tags:
@@ -242,7 +241,6 @@ router.route('/google')
 *          description: Unexpected error.
 */
   .post(validate(oAuth), oAuthLogin('google'), controller.oAuth);
-
 
 router.route('/verify-email')
 /**

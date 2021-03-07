@@ -46,7 +46,6 @@ class User extends Model {
     return bcrypt.compare(password, this.password);
   }
 
-
   /**
   * Return new validation error
   * if error is a email duplicate key error
@@ -102,7 +101,6 @@ class User extends Model {
     }
     throw new APIError(err);
   }
-
 
   static async oAuthLogin({
     id, email, name, picture,

@@ -14,7 +14,6 @@ router.get('/status', (req, res) => res.send('OK'));
 router.use('/users', userRoutes);
 router.use('/auth', authRoutes);
 
-
 // Swagger set up
 const options = {
   swaggerDefinition: {
@@ -51,7 +50,6 @@ const options = {
     './src/api/routes/v1/auth.route.js',
   ],
 };
-
 
 const specs = swaggerJsdoc(options);
 router.use('/docs', swaggerUi.serve);
